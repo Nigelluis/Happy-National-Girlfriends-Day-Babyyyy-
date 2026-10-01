@@ -7,6 +7,7 @@
     <title>Happy National Girlfriends Day 💗</title>
 
     <style>
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -15,14 +16,23 @@
 
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #ffb6d9, #ffd6e8, #fff0f6);
+            background: linear-gradient(
+                135deg,
+                #ffb6d9,
+                #ffd6e8,
+                #fff0f6
+            );
             color: #5c2345;
             text-align: center;
             min-height: 100vh;
             overflow-x: hidden;
         }
 
-        /* HERO */
+
+        /* =========================
+           HERO
+        ========================= */
+
         .hero {
             min-height: 100vh;
             display: flex;
@@ -41,7 +51,7 @@
 
         .hero p {
             font-size: 25px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .name {
@@ -50,6 +60,11 @@
             color: #e91e63;
             margin-bottom: 30px;
         }
+
+
+        /* =========================
+           BUTTONS
+        ========================= */
 
         .button {
             border: none;
@@ -68,13 +83,17 @@
             background: #e91e63;
         }
 
-        /* GENERAL SECTIONS */
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
         section {
             padding: 70px 20px;
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.85);
             width: 90%;
             max-width: 1000px;
             margin: 30px auto;
@@ -94,7 +113,11 @@
             line-height: 1.8;
         }
 
-        /* BIG PHOTO */
+
+        /* =========================
+           BIG PHOTO
+        ========================= */
+
         .big-photo {
             width: 100%;
             max-width: 900px;
@@ -124,17 +147,28 @@
             margin-top: 20px;
         }
 
-        /* LOVE LETTER */
+
+        /* =========================
+           MESSAGE
+        ========================= */
+
         .letter {
-            font-size: 21px;
+            font-size: 22px;
             line-height: 2;
-            text-align: left;
+            text-align: center;
         }
 
-        /* REASONS */
+
+        /* =========================
+           APPRECIATION CARDS
+        ========================= */
+
         .reasons {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(220px, 1fr)
+            );
             gap: 20px;
             margin-top: 30px;
         }
@@ -152,32 +186,69 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
-        /* QUESTION */
-        #answer {
-            margin-top: 25px;
-            font-size: 25px;
-            font-weight: bold;
-            color: #e91e63;
+
+        /* =========================
+           MINI GAME
+        ========================= */
+
+        .game-card {
+            overflow: hidden;
+        }
+
+        .game-area {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            height: 300px;
+            margin: 30px auto;
+            background: #fff0f6;
+            border-radius: 25px;
+            overflow: hidden;
         }
 
         .choice {
+            position: absolute;
             border: none;
-            padding: 15px 30px;
-            margin: 10px;
+            padding: 16px 30px;
             border-radius: 40px;
-            font-size: 18px;
+            font-size: 19px;
             cursor: pointer;
-            background: #ff8fba;
             color: white;
-            transition: 0.3s;
+            transition:
+                left 0.25s ease,
+                top 0.25s ease,
+                transform 0.2s ease;
         }
 
         .choice:hover {
             transform: scale(1.08);
-            background: #ff4f91;
         }
 
-        /* FINAL */
+        .nigel-btn {
+            background: #ff4f91;
+            left: 25%;
+            top: 120px;
+        }
+
+        .savanna-btn {
+            background: #ff8fba;
+            left: 55%;
+            top: 120px;
+        }
+
+        #gameResult {
+            margin-top: 20px;
+            font-size: 25px;
+            font-weight: bold;
+            color: #e91e63;
+            min-height: 40px;
+        }
+
+
+        /* =========================
+           FINAL MESSAGE
+        ========================= */
+
         .final {
             font-size: 28px;
             font-weight: bold;
@@ -185,34 +256,58 @@
             line-height: 1.8;
         }
 
+
+        /* =========================
+           FOOTER
+        ========================= */
+
         footer {
             padding: 40px;
             font-size: 17px;
         }
 
-        /* FLOATING HEARTS */
+
+        /* =========================
+           FLOATING HEARTS
+        ========================= */
+
         .heart {
             position: fixed;
             bottom: -50px;
             font-size: 25px;
-            animation: float 6s linear infinite;
+            animation: float 6s linear forwards;
             pointer-events: none;
             z-index: 999;
         }
 
+
+        /* =========================
+           ANIMATIONS
+        ========================= */
+
         @keyframes float {
+
             0% {
-                transform: translateY(0) rotate(0deg);
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
                 opacity: 1;
             }
 
             100% {
-                transform: translateY(-110vh) rotate(360deg);
+                transform:
+                    translateY(-110vh)
+                    rotate(360deg);
+
                 opacity: 0;
             }
+
         }
 
+
         @keyframes pop {
+
             0% {
                 transform: scale(0.5);
                 opacity: 0;
@@ -222,9 +317,14 @@
                 transform: scale(1);
                 opacity: 1;
             }
+
         }
 
-        /* MOBILE */
+
+        /* =========================
+           MOBILE
+        ========================= */
+
         @media (max-width: 600px) {
 
             .hero h1 {
@@ -254,43 +354,76 @@
             .letter {
                 font-size: 18px;
             }
+
+            .game-area {
+                height: 350px;
+            }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- HERO -->
+
+    <!-- ==================================
+         HERO
+    ================================== -->
+
     <div class="hero">
 
-        <h1>Happy National Girlfriends Day Pre :)</h1>
+        <h1>
+            Happy National Girlfriends Day Pre :)
+        </h1>
 
-        <p>For someone very special 💗</p>
+        <p>
+            For someone very special 💗
+        </p>
 
         <div class="name">
             For Savanna Yoell 💗
         </div>
 
-        <button class="button" onclick="showSurprise()">
+        <button
+            class="button"
+            onclick="showSurprise()"
+        >
             Click for a surprise 💕
         </button>
 
-        <p id="surprise" style="display:none; margin-top:25px;">
+        <p
+            id="surprise"
+            style="display:none; margin-top:25px;"
+        >
             You are one of the most special people in my life. 💗
         </p>
 
     </div>
 
 
-    <!-- BIG PHOTO -->
+
+    <!-- ==================================
+         BIG PHOTO
+    ================================== -->
+
     <section>
 
         <div class="card">
 
-            <h2>📸 Our Special Memory</h2>
+            <h2>
+                📸 Our Special Memory
+            </h2>
 
             <div class="big-photo">
-                <img src="photo.jpg" alt="Our special memory">
+
+                <img
+                    src="photo.jpg"
+                    alt="Our special memory"
+                >
+
             </div>
 
             <p class="photo-caption">
@@ -302,21 +435,24 @@
     </section>
 
 
-    <!-- MESSAGE -->
+
+    <!-- ==================================
+         MESSAGE
+    ================================== -->
+
     <section>
 
         <div class="card">
 
-            <h2>💌 A Little Message</h2>
+            <h2>
+                💌 A Little Message
+            </h2>
 
             <div class="letter">
 
-                Babyyyy sabi ko sayo di ako magpapatalo e HAHAHAHA
-                but aside all that I know that  we just had a small issue yesterday.
-                I just wanna say how much i really love youuuuu and how much you mean to me :)
-                I wish to be your future, your everything, and i wish we make more meaningful
-                memories with each other and thats all.
-                I LOVE YOUUU PO
+                Im sorry if i forgot po Loveee :( i swer ill bawi next time.
+                I LOVE YOUUU SOOO MUCH MWAH MWAH.
+                I Love you to INFINITY AND BEYOND
 
             </div>
 
@@ -325,12 +461,18 @@
     </section>
 
 
-    <!-- REASONS -->
+
+    <!-- ==================================
+         THINGS I APPRECIATE
+    ================================== -->
+
     <section>
 
         <div class="card">
 
-            <h2>💗 Some Things I Appreciate About You</h2>
+            <h2>
+                💗 Some Things I Appreciate About You
+            </h2>
 
             <div class="reasons">
 
@@ -365,49 +507,79 @@
     </section>
 
 
-    <!-- QUESTION -->
+
+    <!-- ==================================
+         MINI GAME
+    ================================== -->
+
     <section>
 
-        <div class="card">
+        <div class="card game-card">
 
-            <h2>💞 One Important Question</h2>
+            <h2>
+                🎮 Who Loves More?
+            </h2>
 
             <p>
-                Who is more special? 👀
+                Choose who loves more 👀
             </p>
 
-            <br>
+            <div
+                class="game-area"
+                id="gameArea"
+            >
 
-            <button class="choice" onclick="answer('Savanna 💗')">
-                Savanna
-            </button>
+                <button
+                    class="choice nigel-btn"
+                    id="nigelBtn"
+                >
+                    Nigel 💗
+                </button>
 
-            <button class="choice" onclick="answer('Definitely Savanna 😭💗')">
-                Obviously Savanna
-            </button>
+                <button
+                    class="choice savanna-btn"
+                    id="savannaBtn"
+                >
+                    Savanna 💕
+                </button>
 
-            <div id="answer"></div>
+            </div>
+
+            <div id="gameResult"></div>
 
         </div>
 
     </section>
 
 
-    <!-- FINAL MESSAGE -->
+
+    <!-- ==================================
+         FINAL
+    ================================== -->
+
     <section>
 
         <div class="card">
 
-            <h2>💗 For Savanna Yoell</h2>
+            <h2>
+                💗 For Savanna Yoell
+            </h2>
 
             <div class="final">
 
-                Happy National Girlfriends Day! 💗<br><br>
+                Happy National Girlfriends Day! 💗
 
-                I hope this little website makes you smile. :)<br><br>
+                <br><br>
 
-                More memories, more laughs,<br>
-                and more moments together. 💕<br><br>
+                I hope this little website makes you smile. :)
+
+                <br><br>
+
+                More memories, more laughs,
+                <br>
+                and more moments together. 💕
+
+                <br><br>
 
                 I LOVE YOUUU PO 💗
 
@@ -418,94 +590,262 @@
     </section>
 
 
+
     <footer>
+
         Made with 💗 for Savanna Yoell
+
     </footer>
 
 
+
+    <!-- ==================================
+         JAVASCRIPT
+    ================================== -->
+
     <script>
 
-        /* SURPRISE BUTTON */
+
+        /* =========================
+           SURPRISE BUTTON
+        ========================= */
 
         function showSurprise() {
 
-            document.getElementById("surprise").style.display = "block";
+            document.getElementById("surprise").style.display =
+                "block";
 
             createHearts();
 
         }
 
 
-        /* QUESTION */
 
-        function answer(text) {
+        /* =========================
+           MINI GAME
+        ========================= */
 
-            document.getElementById("answer").innerHTML = text;
+        const savannaBtn =
+            document.getElementById("savannaBtn");
 
-            createHearts();
+        const nigelBtn =
+            document.getElementById("nigelBtn");
+
+        const gameArea =
+            document.getElementById("gameArea");
+
+        const gameResult =
+            document.getElementById("gameResult");
+
+
+
+        /* MAKE SAVANNA DODGE */
+
+        function dodgeSavanna() {
+
+            const areaWidth =
+                gameArea.clientWidth;
+
+            const areaHeight =
+                gameArea.clientHeight;
+
+            const buttonWidth =
+                savannaBtn.offsetWidth;
+
+            const buttonHeight =
+                savannaBtn.offsetHeight;
+
+
+            const maxX =
+                Math.max(
+                    0,
+                    areaWidth - buttonWidth
+                );
+
+
+            const maxY =
+                Math.max(
+                    0,
+                    areaHeight - buttonHeight
+                );
+
+
+            const newX =
+                Math.random() * maxX;
+
+
+            const newY =
+                Math.random() * maxY;
+
+
+            savannaBtn.style.left =
+                newX + "px";
+
+            savannaBtn.style.top =
+                newY + "px";
 
         }
 
 
-        /* FLOATING HEARTS */
+
+        /* DODGE WHEN MOUSE GETS CLOSE */
+
+        savannaBtn.addEventListener(
+            "mouseenter",
+            dodgeSavanna
+        );
+
+
+
+        /* DODGE WHEN TOUCHED */
+
+        savannaBtn.addEventListener(
+            "touchstart",
+            function(event) {
+
+                event.preventDefault();
+
+                dodgeSavanna();
+
+            }
+        );
+
+
+
+        /* DODGE WHEN CLICKED */
+
+        savannaBtn.addEventListener(
+            "click",
+            function(event) {
+
+                event.preventDefault();
+
+                dodgeSavanna();
+
+            }
+        );
+
+
+
+        /* NIGEL BUTTON */
+
+        nigelBtn.addEventListener(
+            "click",
+            function() {
+
+                gameResult.innerHTML =
+                    "HAHAHA 😭💗 Nigel wins! Nice try, Savanna!";
+
+                createHearts();
+
+            }
+        );
+
+
+
+        /* =========================
+           FLOATING HEARTS
+        ========================= */
 
         function createHearts() {
 
-            for (let i = 0; i < 15; i++) {
+            for (
+                let i = 0;
+                i < 15;
+                i++
+            ) {
 
-                const heart = document.createElement("div");
+                const heart =
+                    document.createElement("div");
 
-                heart.className = "heart";
+                heart.className =
+                    "heart";
 
-                heart.innerHTML = "💗";
+                heart.innerHTML =
+                    "💗";
 
-                heart.style.left = Math.random() * 100 + "vw";
+
+                heart.style.left =
+                    Math.random() * 100 + "vw";
+
 
                 heart.style.animationDuration =
                     (Math.random() * 3 + 3) + "s";
 
+
                 heart.style.fontSize =
                     (Math.random() * 20 + 20) + "px";
 
-                document.body.appendChild(heart);
 
-                setTimeout(() => {
+                document.body.appendChild(
+                    heart
+                );
 
-                    heart.remove();
 
-                }, 6000);
+                setTimeout(
+                    function() {
+
+                        heart.remove();
+
+                    },
+                    6000
+                );
 
             }
 
         }
 
 
-        /* AUTOMATIC HEARTS */
 
-        setInterval(() => {
+        /* =========================
+           AUTOMATIC HEARTS
+        ========================= */
 
-            const heart = document.createElement("div");
+        setInterval(
+            function() {
 
-            heart.className = "heart";
+                const heart =
+                    document.createElement("div");
 
-            heart.innerHTML = "💕";
+                heart.className =
+                    "heart";
 
-            heart.style.left = Math.random() * 100 + "vw";
+                heart.innerHTML =
+                    "💕";
 
-            heart.style.animationDuration =
-                (Math.random() * 4 + 4) + "s";
 
-            document.body.appendChild(heart);
+                heart.style.left =
+                    Math.random() * 100 + "vw";
 
-            setTimeout(() => {
 
-                heart.remove();
+                heart.style.animationDuration =
+                    (Math.random() * 4 + 4) + "s";
 
-            }, 8000);
 
-        }, 1000);
+                document.body.appendChild(
+                    heart
+                );
+
+
+                setTimeout(
+                    function() {
+
+                        heart.remove();
+
+                    },
+                    8000
+                );
+
+            },
+            1000
+        );
+
 
     </script>
 
+
 </body>
 </html>
+  
+ 
+   
